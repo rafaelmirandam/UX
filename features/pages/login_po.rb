@@ -2,14 +2,14 @@
 class LoginPage <SitePrism::Page
     set_url '/Account/Login'
     
-    element :user, '#email'
-    element :password, 'input[placeholder*=senha]'
-    element :sign_in, '.login-button'
+    element :user, '#UserName'
+    element :password, '#Password'
+    element :sign_in, '#btnSubmit'
 
-    element :alert, 'div[class$=alert-warning]'
+    element :alert, '.validation-summary-errors'
 
     def with(email, pwd)
-        self.email.set email
+        self.user.set email
         self.password.set pwd
         self.sign_in.click
     end
